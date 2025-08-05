@@ -86,14 +86,14 @@ const Create = () => {
     try {
       setLoading(true);
       
-      const newStyler = {
+const newStyler = {
         name: formData.name,
         style: formData.style,
         description: formData.description,
         images: formData.images,
-        value: 100, // Starting value
-        score: 50, // Starting score
-        creatorId: "current-user" // In real app, get from auth
+        value: 100,
+        score: 50,
+        creatorId: 1
       };
 
       const createdStyler = await stylarService.create(newStyler);

@@ -33,8 +33,10 @@ const Portfolio = () => {
       
       // Load owned stylars
       const allStylars = await stylarService.getAll();
+const ownedIds = userData.ownedStylars ? 
+        (typeof userData.ownedStylars === 'string' ? userData.ownedStylars.split(',').map(id => parseInt(id)) : userData.ownedStylars) : [];
       const userStylars = allStylars.filter(s => 
-        userData.ownedStylars.includes(s.Id) || s.creatorId === userData.id
+        ownedIds.includes(s.Id) || s.creatorId?.Id === userData.Id || s.creatorId === userData.Id
       );
       
       setOwnedStylars(userStylars);

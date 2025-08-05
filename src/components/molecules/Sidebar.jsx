@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
+import LogoutButton from "@/components/atoms/LogoutButton";
 import { cn } from "@/utils/cn";
 
 const Sidebar = () => {
@@ -52,16 +53,17 @@ const Sidebar = () => {
             </NavLink>
           ))}
         </div>
-      </nav>
+</nav>
 
       {/* Footer */}
       <div className="p-4 border-t border-white/10">
-        <div className="glass p-4 rounded-xl">
+        <div className="glass p-4 rounded-xl mb-4">
           <h3 className="font-semibold text-white mb-2">Pro Tip</h3>
           <p className="text-gray-400 text-sm">
             Invest early in trending styles to maximize your StyleCoins!
           </p>
         </div>
+        <LogoutButton />
       </div>
     </div>
   );

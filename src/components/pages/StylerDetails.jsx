@@ -70,7 +70,7 @@ const StylerDetails = () => {
         value: prev.value + investAmount
       }));
       
-      toast.success(`Invested ${investAmount} StyleCoins in ${stylar.name}!`);
+toast.success(`Invested ${investAmount} StyleCoins in ${stylar.name || stylar.Name}!`);
     } catch (error) {
       toast.error("Investment failed. Please try again.");
     } finally {

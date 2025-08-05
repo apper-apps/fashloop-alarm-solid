@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
     toast.info("No new notifications");
   };
 
-  return (
+return (
     <div className="min-h-screen bg-background flex">
       {/* Desktop Sidebar */}
       <Sidebar />

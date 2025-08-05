@@ -32,7 +32,7 @@ const Profile = () => {
       
       // Load user's created stylars
       const allStylars = await stylarService.getAll();
-      const userCreatedStylars = allStylars.filter(s => s.creatorId === userData.id);
+const userCreatedStylars = allStylars.filter(s => s.creatorId?.Id === userData.Id || s.creatorId === userData.Id);
       setCreatedStylars(userCreatedStylars);
     } catch (err) {
       setError("Failed to load profile. Please try again.");

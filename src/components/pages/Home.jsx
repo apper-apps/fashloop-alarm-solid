@@ -85,7 +85,7 @@ const Home = () => {
         s.Id === stylar.Id ? { ...s, value: s.value + investmentAmount } : s
       ));
       
-      toast.success(`Invested ${investmentAmount} StyleCoins in ${stylar.name}!`);
+toast.success(`Invested ${investmentAmount} StyleCoins in ${stylar.name || stylar.Name}!`);
     } catch (error) {
       toast.error("Investment failed. Please try again.");
     }

@@ -1,52 +1,177 @@
-import challengeData from "@/services/mockData/challenges.json";
-
 class ChallengeService {
   constructor() {
-    this.challenges = [...challengeData];
+    const { ApperClient } = window.ApperSDK;
+    this.apperClient = new ApperClient({
+      apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+      apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+    });
+    this.tableName = 'challenge';
   }
 
   async getAll() {
-    await new Promise(resolve => setTimeout(resolve, 300));
-    return [...this.challenges];
+    try {
+      const params = {
+        fields: [
+          { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
+          { field: { Name: "theme" } },
+          { field: { Name: "description" } },
+          { field: { Name: "startDate" } },
+          { field: { Name: "endDate" } },
+          { field: { Name: "submissions" } }
+        ]
+      };
+
+      const response = await this.apperClient.fetchRecords(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        return [];
+      }
+
+      return (response.data || []).map(challenge => ({
+        ...challenge,
+        submissions: challenge.submissions ? challenge.submissions.split(',').map(id => parseInt(id)) : []
+      }));
+    } catch (error) {
+      if (error?.response?.data?.message) {
+        console.error("Error fetching challenges:", error?.response?.data?.message);
+      } else {
+        console.error("Error fetching challenges:", error.message);
+      }
+      return [];
+    }
   }
 
   async getById(id) {
-    await new Promise(resolve => setTimeout(resolve, 200));
-    const challenge = this.challenges.find(c => c.Id === id);
-    if (!challenge) {
+    try {
+      const params = {
+        fields: [
+          { field: { Name: "Name" } },
+          { field: { Name: "Tags" } },
+          { field: { Name: "theme" } },
+          { field: { Name: "description" } },
+          { field: { Name: "startDate" } },
+          { field: { Name: "endDate" } },
+          { field: { Name: "submissions" } }
+        ]
+      };
+
+      const response = await this.apperClient.getRecordById(this.tableName, id, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error("Challenge not found");
+      }
+
+      const challenge = response.data;
+      return {
+        ...challenge,
+        submissions: challenge.submissions ? challenge.submissions.split(',').map(id => parseInt(id)) : []
+      };
+    } catch (error) {
+      if (error?.response?.data?.message) {
+        console.error(`Error fetching challenge with ID ${id}:`, error?.response?.data?.message);
+      } else {
+        console.error("Error fetching challenge:", error.message);
+      }
       throw new Error("Challenge not found");
     }
-    return { ...challenge };
   }
 
   async create(challengeData) {
-    await new Promise(resolve => setTimeout(resolve, 400));
-    
-    const maxId = Math.max(...this.challenges.map(c => c.Id), 0);
-    const newChallenge = {
-      ...challengeData,
-      Id: maxId + 1,
-      submissions: []
-    };
-    
-    this.challenges.push(newChallenge);
-    return { ...newChallenge };
+    try {
+      const params = {
+        records: [{
+          Name: challengeData.Name || challengeData.theme,
+          theme: challengeData.theme,
+          description: challengeData.description,
+          startDate: challengeData.startDate,
+          endDate: challengeData.endDate,
+          submissions: ""
+        }]
+      };
+
+      const response = await this.apperClient.createRecord(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error("Failed to create challenge");
+      }
+
+      if (response.results) {
+        const failedRecords = response.results.filter(result => !result.success);
+        
+        if (failedRecords.length > 0) {
+          console.error(`Failed to create ${failedRecords.length} challenges:${JSON.stringify(failedRecords)}`);
+          throw new Error("Failed to create challenge");
+        }
+        
+        const createdChallenge = response.results[0].data;
+        return {
+          ...createdChallenge,
+          submissions: []
+        };
+      }
+    } catch (error) {
+      if (error?.response?.data?.message) {
+        console.error("Error creating challenge:", error?.response?.data?.message);
+      } else {
+        console.error("Error creating challenge:", error.message);
+      }
+      throw error;
+    }
   }
 
   async addSubmission(challengeId, stylarId) {
-    await new Promise(resolve => setTimeout(resolve, 200));
-    
-    const challengeIndex = this.challenges.findIndex(c => c.Id === challengeId);
-    if (challengeIndex === -1) {
-      throw new Error("Challenge not found");
+    try {
+      const challenge = await this.getById(challengeId);
+      
+      const currentSubmissions = challenge.submissions || [];
+      if (currentSubmissions.includes(parseInt(stylarId))) {
+        return challenge;
+      }
+
+      const updatedSubmissions = [...currentSubmissions, parseInt(stylarId)];
+      
+      const params = {
+        records: [{
+          Id: parseInt(challengeId),
+          submissions: updatedSubmissions.join(',')
+        }]
+      };
+
+      const response = await this.apperClient.updateRecord(this.tableName, params);
+      
+      if (!response.success) {
+        console.error(response.message);
+        throw new Error("Failed to add submission");
+      }
+
+      if (response.results) {
+        const failedRecords = response.results.filter(result => !result.success);
+        
+        if (failedRecords.length > 0) {
+          console.error(`Failed to update ${failedRecords.length} challenges:${JSON.stringify(failedRecords)}`);
+          throw new Error("Failed to add submission");
+        }
+        
+        const updatedChallenge = response.results[0].data;
+        return {
+          ...updatedChallenge,
+          submissions: updatedChallenge.submissions ? updatedChallenge.submissions.split(',').map(id => parseInt(id)) : []
+        };
+      }
+    } catch (error) {
+      if (error?.response?.data?.message) {
+        console.error("Error adding challenge submission:", error?.response?.data?.message);
+      } else {
+        console.error("Error adding challenge submission:", error.message);
+      }
+      throw error;
     }
-    
-    if (!this.challenges[challengeIndex].submissions.includes(stylarId)) {
-      this.challenges[challengeIndex].submissions.push(stylarId);
-    }
-    
-    return { ...this.challenges[challengeIndex] };
   }
 }
 
+export const challengeService = new ChallengeService();
 export const challengeService = new ChallengeService();

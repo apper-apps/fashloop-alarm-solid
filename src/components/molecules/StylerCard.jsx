@@ -14,7 +14,7 @@ const StylerCard = ({ stylar, showInvestButton = true, onInvest }) => {
     if (onInvest) {
       onInvest(stylar);
     } else {
-      toast.success(`Invested 50 StyleCoins in ${stylar.name}!`);
+toast.success(`Invested 50 StyleCoins in ${stylar.name || stylar.Name}!`);
     }
   };
 
@@ -48,7 +48,7 @@ const StylerCard = ({ stylar, showInvestButton = true, onInvest }) => {
             <ApperIcon name="Sparkles" size={18} className="text-white" />
           </div>
           <div>
-            <h3 className="font-semibold text-white text-sm">{stylar.name}</h3>
+<h3 className="font-semibold text-white text-sm">{stylar.name || stylar.Name}</h3>
             <p className="text-gray-400 text-xs">{stylar.style}</p>
           </div>
         </div>
