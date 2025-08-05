@@ -1,0 +1,132 @@
+[
+  {
+    "Id": 1,
+    "name": "Neon Dreams",
+    "creatorId": "user1",
+    "images": [
+      "https://images.unsplash.com/photo-1506629905607-45b8e2d5c8b7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop"
+    ],
+    "style": "streetwear",
+    "value": 1250,
+    "score": 85,
+    "created": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Minimalist Zen",
+    "creatorId": "user2",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop"
+    ],
+    "style": "minimalist",
+    "value": 875,
+    "score": 78,
+    "created": "2024-01-14T14:20:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Vintage Vibes",
+    "creatorId": "user3",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1506629905607-45b8e2d5c8b7?w=400&h=400&fit=crop"
+    ],
+    "style": "vintage",
+    "value": 650,
+    "score": 72,
+    "created": "2024-01-13T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Boho Chic",
+    "creatorId": "user4",
+    "images": [
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop"
+    ],
+    "style": "bohemian",
+    "value": 420,
+    "score": 68,
+    "created": "2024-01-12T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Gothic Elegance",
+    "creatorId": "user5",
+    "images": [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop"
+    ],
+    "style": "gothic",
+    "value": 780,
+    "score": 75,
+    "created": "2024-01-11T11:30:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Preppy Perfect",
+    "creatorId": "user1",
+    "images": [
+      "https://images.unsplash.com/photo-1506629905607-45b8e2d5c8b7?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop"
+    ],
+    "style": "preppy",
+    "value": 550,
+    "score": 70,
+    "created": "2024-01-10T13:20:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Glamour Gold",
+    "creatorId": "user2",
+    "images": [
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop"
+    ],
+    "style": "glamour",
+    "value": 920,
+    "score": 82,
+    "created": "2024-01-09T08:45:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Casual Cool",
+    "creatorId": "user3",
+    "images": [
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1506629905607-45b8e2d5c8b7?w=400&h=400&fit=crop"
+    ],
+    "style": "casual",
+    "value": 380,
+    "score": 65,
+    "created": "2024-01-08T17:10:00Z"
+  },
+  {
+    "Id": 9,
+    "name": "Urban Edge",
+    "creatorId": "user4",
+    "images": [
+      "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=400&fit=crop"
+    ],
+    "style": "streetwear",
+    "value": 1100,
+    "score": 88,
+    "created": "2024-01-07T12:30:00Z"
+  },
+  {
+    "Id": 10,
+    "name": "Ethereal Beauty",
+    "creatorId": "user5",
+    "images": [
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&h=400&fit=crop"
+    ],
+    "style": "bohemian",
+    "value": 670,
+    "score": 76,
+    "created": "2024-01-06T15:45:00Z"
+  }
+]

@@ -1,0 +1,107 @@
+[
+  {
+    "Id": 1,
+    "username": "StyleMaster",
+    "stylecoins": 2500,
+    "ownedStylars": [1, 6],
+    "investments": [
+      {
+        "stylarId": 2,
+        "amount": 50,
+        "date": "2024-01-15T09:30:00Z"
+      },
+      {
+        "stylarId": 3,
+        "amount": 75,
+        "date": "2024-01-14T16:20:00Z"
+      },
+      {
+        "stylarId": 7,
+        "amount": 100,
+        "date": "2024-01-13T11:15:00Z"
+      }
+    ],
+    "badges": ["first-stylar", "early-investor", "trendsetter"]
+  },
+  {
+    "Id": 2,
+    "username": "FashionGuru",
+    "stylecoins": 1800,
+    "ownedStylars": [2, 7],
+    "investments": [
+      {
+        "stylarId": 1,
+        "amount": 100,
+        "date": "2024-01-15T14:45:00Z"
+      },
+      {
+        "stylarId": 9,
+        "amount": 150,
+        "date": "2024-01-12T10:30:00Z"
+      }
+    ],
+    "badges": ["minimalist", "high-value-creator"]
+  },
+  {
+    "Id": 3,
+    "username": "TrendHunter",
+    "stylecoins": 3200,
+    "ownedStylars": [3, 8],
+    "investments": [
+      {
+        "stylarId": 1,
+        "amount": 75,
+        "date": "2024-01-14T08:20:00Z"
+      },
+      {
+        "stylarId": 5,
+        "amount": 50,
+        "date": "2024-01-13T13:45:00Z"
+      },
+      {
+        "stylarId": 9,
+        "amount": 200,
+        "date": "2024-01-11T15:30:00Z"
+      }
+    ],
+    "badges": ["vintage-lover", "portfolio-builder"]
+  },
+  {
+    "Id": 4,
+    "username": "StyleIcon",
+    "stylecoins": 1500,
+    "ownedStylars": [4, 9],
+    "investments": [
+      {
+        "stylarId": 2,
+        "amount": 25,
+        "date": "2024-01-15T11:15:00Z"
+      },
+      {
+        "stylarId": 7,
+        "amount": 125,
+        "date": "2024-01-10T09:45:00Z"
+      }
+    ],
+    "badges": ["boho-specialist", "community-favorite"]
+  },
+  {
+    "Id": 5,
+    "username": "VogueVision",
+    "stylecoins": 2100,
+    "ownedStylars": [5, 10],
+    "investments": [
+      {
+        "stylarId": 1,
+        "amount": 200,
+        "date": "2024-01-13T17:20:00Z"
+      },
+      {
+        "stylarId": 6,
+        "amount": 50,
+        "date": "2024-01-12T14:30:00Z"
+      }
+    ],
+    "badges": ["gothic-queen", "high-scorer"]
+  }
+]

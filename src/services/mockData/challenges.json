@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "theme": "Monochrome Magic",
+    "description": "Create a stunning look using only one color palette. Show us how powerful simplicity can be in fashion.",
+    "startDate": "2024-01-15T00:00:00Z",
+    "endDate": "2024-01-22T23:59:59Z",
+    "submissions": [1, 2, 3, 5, 7]
+  },
+  {
+    "Id": 2,
+    "theme": "Grunge Romance",
+    "description": "Blend the edgy grunge aesthetic with romantic elements. Think tough meets tender in perfect harmony.",
+    "startDate": "2024-01-16T00:00:00Z",
+    "endDate": "2024-01-23T23:59:59Z",
+    "submissions": [4, 6, 8, 9]
+  },
+  {
+    "Id": 3,
+    "theme": "Future Retro",
+    "description": "Combine futuristic elements with vintage pieces. Create a look that feels both nostalgic and ahead of its time.",
+    "startDate": "2024-01-20T00:00:00Z",
+    "endDate": "2024-01-27T23:59:59Z",
+    "submissions": [1, 3, 10]
+  },
+  {
+    "Id": 4,
+    "theme": "Cultural Fusion",
+    "description": "Celebrate diversity by blending fashion elements from different cultures in a respectful and beautiful way.",
+    "startDate": "2024-01-22T00:00:00Z",
+    "endDate": "2024-01-29T23:59:59Z",
+    "submissions": [2, 4, 5, 7, 9]
+  },
+  {
+    "Id": 5,
+    "theme": "Sustainable Style",
+    "description": "Show that eco-friendly fashion can be incredibly stylish. Use sustainable materials and upcycled pieces.",
+    "startDate": "2024-01-25T00:00:00Z",
+    "endDate": "2024-02-01T23:59:59Z",
+    "submissions": [6, 8, 10]
+  },
+  {
+    "Id": 6,
+    "theme": "Neon Nights",
+    "description": "Light up the darkness with vibrant neon colors and electrifying style. Perfect for the night scene.",
+    "startDate": "2024-01-28T00:00:00Z",
+    "endDate": "2024-02-04T23:59:59Z",
+    "submissions": [1, 9]
+  }
+]

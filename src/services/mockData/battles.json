@@ -1,0 +1,66 @@
+[
+  {
+    "Id": 1,
+    "stylar1Id": 1,
+    "stylar2Id": 9,
+    "votes1": 45,
+    "votes2": 38,
+    "voters": ["user2", "user3", "user4", "user5"]
+  },
+  {
+    "Id": 2,
+    "stylar1Id": 2,
+    "stylar2Id": 7,
+    "votes1": 32,
+    "votes2": 41,
+    "voters": ["user1", "user3", "user5"]
+  },
+  {
+    "Id": 3,
+    "stylar1Id": 3,
+    "stylar2Id": 5,
+    "votes1": 28,
+    "votes2": 35,
+    "voters": ["user1", "user2", "user4"]
+  },
+  {
+    "Id": 4,
+    "stylar1Id": 6,
+    "stylar2Id": 8,
+    "votes1": 22,
+    "votes2": 18,
+    "voters": ["user1", "user2", "user3"]
+  },
+  {
+    "Id": 5,
+    "stylar1Id": 4,
+    "stylar2Id": 10,
+    "votes1": 19,
+    "votes2": 24,
+    "voters": ["user2", "user5"]
+  },
+  {
+    "Id": 6,
+    "stylar1Id": 1,
+    "stylar2Id": 7,
+    "votes1": 0,
+    "votes2": 0,
+    "voters": []
+  },
+  {
+    "Id": 7,
+    "stylar1Id": 3,
+    "stylar2Id": 9,
+    "votes1": 0,
+    "votes2": 0,
+    "voters": []
+  },
+  {
+    "Id": 8,
+    "stylar1Id": 2,
+    "stylar2Id": 5,
+    "votes1": 0,
+    "votes2": 0,
+    "voters": []
+  }
+]

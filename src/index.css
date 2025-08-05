@@ -1,0 +1,123 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0F0F1E;
+  color: #ffffff;
+}
+
+/* Toast Overrides */
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__toast {
+  background: linear-gradient(135deg, #1A1A2E 0%, #2A2A3E 100%);
+  border: 1px solid #FF006E33;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  min-height: 48px;
+  box-shadow: 0 8px 24px rgba(255, 0, 110, 0.1);
+}
+
+.Toastify__toast--success {
+  border-color: #06FFA533;
+}
+
+.Toastify__toast--error {
+  border-color: #FF436533;
+}
+
+.Toastify__toast--warning {
+  border-color: #FFB70033;
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(90deg, #FF006E, #8338EC);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A2E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #FF006E, #8338EC);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #FF1A8F, #9B5CFF);
+}
+
+/* Glass morphism utility */
+.glass {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #FF006E, #8338EC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animation utilities */
+.animate-coin-flip {
+  animation: coinFlip 0.6s ease-in-out;
+}
+
+@keyframes coinFlip {
+  0% { transform: rotateY(0deg) scale(1); }
+  50% { transform: rotateY(90deg) scale(1.1); }
+  100% { transform: rotateY(0deg) scale(1); }
+}
+
+/* Fashion card hover effects */
+.fashion-card {
+  transition: all 0.3s ease;
+}
+
+.fashion-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+}
+
+/* High value glow effect */
+.high-value-glow {
+  position: relative;
+}
+
+.high-value-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #FF006E, #8338EC, #FFBE0B);
+  border-radius: inherit;
+  z-index: -1;
+  animation: glowRotate 3s linear infinite;
+}
+
+@keyframes glowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
